@@ -46,22 +46,32 @@ backBtn.onclick = function(){
         } else {
         counterSound = sound.length - 1;
     };
-    mediaplayer.classList.add('play');
+    
     audio.src = sound[counterSound];
     title.title = soundTitle[counterSound];
-    audio.play();
+    
+    if (mediaplayer.classList.contains('play')) {
+		audio.play();
+	} else {
+	 	audio.pause();
+    	   }
 };
 //next
 let nextBtn = document.getElementsByClassName('next')[0];
+
 nextBtn.onclick = function(){
     if(counterSound < sound.length -1){
         counterSound++;
         } else {
         counterSound = 0;
     };
-    mediaplayer.classList.add('play');
+    
     audio.src = sound[counterSound];
     title.title = soundTitle[counterSound];
-    audio.play();
+   if (mediaplayer.classList.contains('play')) {
+		audio.play();
+	} else {
+	 	audio.pause();
+    	   }
 };
 
